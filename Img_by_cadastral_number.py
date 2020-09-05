@@ -9,7 +9,7 @@ import re
 import os
 
 
-api_key = "869e12e5-d411-496a-a608-83d56d8857b4"
+api_key = ""
 
 # считывание файла с кадастровыми номерами
 file = open("Kadastrs" + ".txt", 'r')
