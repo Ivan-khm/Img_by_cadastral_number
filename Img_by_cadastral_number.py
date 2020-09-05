@@ -38,7 +38,9 @@ for kadastr in kad_numbers:
 		adress_get = el.select('ul > li > span')
 		adress = (str(adress_get).split("span"))
 		adress_itog = adress[3][1:-2]
+	# площадь участка
 	area = adress[7][1:-5].replace(",", ".")
+	# изменение адреса для запроса на получение координат
 	adress_edit = adress_itog.replace(" ", "+")
 
 	# формирование запроса на получение координат по адресу
