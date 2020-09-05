@@ -46,7 +46,6 @@ for kadastr in kad_numbers:
 	# формирование запроса на получение координат по адресу
 	getting_coord_uml = "https://geocode-maps.yandex.ru/1.x/?apikey=%s&geocode=%s" % (api_key, adress_edit)
 	answer_coord_xml = requests.get(getting_coord_uml).text
-	#print(answer_coord_xml)
 
 	coordinates = {"Adress":adress_itog, "Kadastr":kadastr,"Area": area, "LowerCorner":"", "UpperCorner":"", "Pos":""}
 	# координаты левого нижнего угла участка
@@ -56,7 +55,6 @@ for kadastr in kad_numbers:
 	# координаты центра участка
 	coordinates["Pos"] = answer_coord_xml[answer_coord_xml.find('pos>')+4:answer_coord_xml.find('/pos>')-1].replace(" ", ",")
 	mas_places.append(coordinates)
-	#print(coordinates)
 
 	# разбиение координат на долготу и широту
 	longitude_center, latitude_center = coordinates["Pos"].split(",")
