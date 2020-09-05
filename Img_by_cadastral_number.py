@@ -68,6 +68,7 @@ for kadastr in kad_numbers:
 	bottom_right = longitude_bottom + "," + latitude_upper
 
 	# координаты углов уменьшенного прямоугольника (для более точного отображения)
+	# рассчет оптимального масштаба для снимка
 	multiplier = 1.0
 	if float(area) <=4000:
 		multiplier = 5.0
@@ -81,6 +82,7 @@ for kadastr in kad_numbers:
 	if float(area) >12000 and float(area) <= 23000:
 		multiplier = 2.0
 		spn = "0.002,0.002"
+	# рассчет координат для отрисовки полигона
 	upper_right_2 = str(float(longitude_center) + (abs(float(longitude_upper) - float(longitude_center))/multiplier)) + "," + str(float(latitude_center) + (abs(float(latitude_upper) - float(latitude_center))/multiplier))
 	upper_left_2 = str(float(longitude_center) - (abs(float(longitude_upper) - float(longitude_center))/multiplier)) + "," + str(float(latitude_center) + (abs(float(latitude_upper) - float(latitude_center))/multiplier))
 	bottom_right_2 = str(float(longitude_center) + (abs(float(longitude_upper) - float(longitude_center))/multiplier)) + "," + str(float(latitude_center) - (abs(float(latitude_upper) - float(latitude_center))/multiplier))
