@@ -90,9 +90,7 @@ for kadastr in kad_numbers:
 
 	#формирование запроса на получение снимка со спутника и отрисовки полигона по координатам (яндекс карты)
 	getting_photo_uml = "https://static-maps.yandex.ru/1.x/?l=sat&ll=%s&pt=%s,pm2rdm&spn=%s&pl=c:FF0000FF,w:3,%s,%s,%s,%s,%s" % (coordinates["Pos"], coordinates["Pos"], spn, upper_left_2, upper_right_2, bottom_right_2, bottom_left_2, upper_left_2)
-	#print(getting_photo_uml)
 	get_photo = requests.get(getting_photo_uml)
-	#print(get_photo)
 
 	# сохранение полученного снимка картинкой
 	file = directory + '\\Photos\\' + kadastr_name + ".jpg"
